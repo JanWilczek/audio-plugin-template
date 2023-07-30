@@ -19,10 +19,6 @@ set(LIB_DIR ${CMAKE_CURRENT_SOURCE_DIR}/libs)
 # Downloads CPM if not already downloaded. CPM is an easy package manager nicely integrated with CMake.
 include(cmake/cpm.cmake)
 
-if (EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/libs)
-    message(STATUS "Third-party dependencies were cached successfully!")
-endif()
-
 # this commands downloads AND configures JUCE
 CPMAddPackage(
     NAME JUCE
