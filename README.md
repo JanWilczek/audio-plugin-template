@@ -15,3 +15,12 @@ $ cmake --build build
 
 The first run will take the most time because the dependencies (CPM, JUCE, and googletest) need to be downloaded.
 
+To run clang-format on every commit, in the main directory execute
+
+```bash
+pre-commit install
+```
+
+(for this you may need to install `pre-commit` with `pip`: `pip install pre-commit`).
+
+Don't forget to change "YourPluginName" to, well, your plugin name everywhere 😉
