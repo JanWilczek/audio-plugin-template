@@ -16,10 +16,10 @@ set(CMAKE_CXX_STANDARD 23)
 # either as an environment variable or pass it to the cmake script with -DCPM_SOURCE_CACHE=<path>.
 set(LIB_DIR ${CMAKE_CURRENT_SOURCE_DIR}/libs)
 
-# Downloads CPM if not already downloaded. CPM is an easy package manager nicely integrated with CMake.
+# Downloads CPM if not already downloaded. CPM is an easy-to-use package manager nicely integrated with CMake.
 include(cmake/cpm.cmake)
 
-# this commands downloads AND configures JUCE
+# This commands downloads AND configures JUCE. It sets up some variables, like JUCE_SOURCE_DIR.
 CPMAddPackage(
     NAME JUCE
     GIT_TAG 7.0.5
