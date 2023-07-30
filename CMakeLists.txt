@@ -28,7 +28,7 @@ CPMAddPackage(
     SOURCE_DIR ${LIB_DIR}/juce
 )
 
-# Add googletest
+# Adds googletest.
 CPMAddPackage(
     NAME GOOGLETEST
     GITHUB_REPOSITORY google/googletest
@@ -40,13 +40,19 @@ CPMAddPackage(
         "gtest_force_shared_crt ON"
 )
 
+# This command allows running tests from the "build" folder (the one where CMake generates the project to).
 enable_testing()
 
+# Enables all warnings and treats warnings as errors.
+# This needs to be added AFTER all the third-party dependencies.
 if(MSVC)
     add_compile_options(/Wall /WX)
 else()
     add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
+# Adds all the targets configured in the "plugin" folder.
 add_subdirectory(plugin)
+
+# Adds all the targets configured in the "test" folder.
 add_subdirectory(test)
