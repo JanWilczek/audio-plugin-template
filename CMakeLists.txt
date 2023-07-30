@@ -7,6 +7,10 @@ set(CMAKE_CXX_STANDARD 23)
 set(LIB_DIR ${CMAKE_CURRENT_SOURCE_DIR}/libs)
 include(cmake/cpm.cmake)
 
+if (EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/libs)
+    message(STATUS "Third-party dependencies were cached successfully!")
+endif()
+
 # this commands downloads AND configures JUCE
 CPMAddPackage(
     NAME JUCE
