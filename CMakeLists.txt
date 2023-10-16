@@ -56,3 +56,8 @@ add_subdirectory(plugin)
 
 # Adds all the targets configured in the "test" folder.
 add_subdirectory(test)
+
+# It can be helpful to automatically copy the newly compiled plugin to a folder where you can test it.
+# You need elevated privileges to copy to the VST3 folder. You can instead copy the plugin to a folder on desktop
+# and point your DAW or VST host to that folder.
+# configure_file("./build/plugin/AudioPlugin_artefacts/Debug/VST3/YourPluginName.vst3/Contents/x86_64-win/YourPluginName.vst3" "C:/Users/[USERNAME]/Desktop/myplugin" COPYONLY)
