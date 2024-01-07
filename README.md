@@ -55,3 +55,9 @@ pre-commit install
 (for this you may need to install `pre-commit` with `pip`: `pip install pre-commit`).
 
 Don't forget to change "YourPluginName" to, well, your plugin name everywhere 😉
+
+## How was this template built?
+
+See how I create this template step by step in this video:
+
+[![Audio plugin template tutorial video](http://img.youtube.com/vi/Uq7Hwt18s3s/0.jpg)](https://www.youtube.com/watch?v=Uq7Hwt18s3s "Audio plugin template tutorial video")
