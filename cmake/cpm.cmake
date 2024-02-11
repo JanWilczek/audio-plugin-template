@@ -1,4 +1,4 @@
-set(CPM_DOWNLOAD_VERSION 0.38.2)
+set(CPM_DOWNLOAD_VERSION 0.38.7)
 
 set(CPM_DOWNLOAD_LOCATION "${LIB_DIR}/cpm/CPM_${CPM_DOWNLOAD_VERSION}.cmake")
 
@@ -25,3 +25,4 @@ else()
 endif()
 
 include(${CPM_DOWNLOAD_LOCATION})
+

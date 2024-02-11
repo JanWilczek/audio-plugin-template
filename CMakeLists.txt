@@ -10,6 +10,10 @@ project(WolfSoundAudioPluginTemplate)
 
 # Always use the newest C++ standard on green-field projects if possible.
 set(CMAKE_CXX_STANDARD 23)
+if (APPLE)
+    # On Mac, we need to wait for a new JUCE version that fixes the compilation issue
+    set(CMAKE_CXX_STANDARD 20)
+endif()
 
 # I like to download the dependencies to the same folder as the project.
 # If you want to install them system wide, set CPM_SOURCE_CACHE with the path to the dependencies
@@ -22,8 +26,8 @@ include(cmake/cpm.cmake)
 # This commands downloads AND configures JUCE. It sets up some variables, like JUCE_SOURCE_DIR.
 CPMAddPackage(
     NAME JUCE
-    GIT_TAG 7.0.5
-    VERSION 7.0.5
+    GIT_TAG 7.0.9
+    VERSION 7.0.9
     GITHUB_REPOSITORY juce-framework/JUCE
     SOURCE_DIR ${LIB_DIR}/juce
 )
