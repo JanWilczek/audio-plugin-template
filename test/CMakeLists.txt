@@ -22,6 +22,14 @@ target_link_libraries(${PROJECT_NAME}
         AudioPlugin
         GTest::gtest_main)
 
+# Enables all warnings and treats warnings as errors.
+# This needs to be set up only for your projects, not 3rd party
+if (MSVC)
+    target_compile_options(${PROJECT_NAME} PRIVATE /Wall /WX)
+else()
+    target_compile_options(${PROJECT_NAME} PRIVATE -Wall -Wextra -Wpedantic)
+endif()
+
 # Adds googletest-specific CMake commands at our disposal.
 include(GoogleTest)
 # Add all tests defined with googletest to the CMake metadata so that these tests are run upon a call to ctest in the test projects' binary directory.

@@ -53,11 +53,16 @@ target_compile_definitions(${PROJECT_NAME}
         JUCE_VST3_CAN_REPLACE_VST2=0
 )
 
-# Silences some deprecation warnings that (hopefully) will be fixed in a future release of JUCE.
+# Enables all warnings and treats warnings as errors.
+# This needs to be set up only for your projects, not 3rd party
 if (MSVC)
-target_compile_definitions(${PROJECT_NAME}
-    PRIVATE
-        _SILENCE_CXX23_ALIGNED_STORAGE_DEPRECATION_WARNING)
+    target_compile_options(${PROJECT_NAME} PRIVATE /Wall /WX)
+    # Silences some deprecation warnings that (hopefully) will be fixed in a future release of JUCE.
+    target_compile_definitions(${PROJECT_NAME}
+        PRIVATE
+            _SILENCE_CXX23_ALIGNED_STORAGE_DEPRECATION_WARNING)
+else()
+    target_compile_options(${PROJECT_NAME} PRIVATE -Wall -Wextra -Wpedantic)
 endif()
 
 # In Visual Studio this command provides a nice grouping of source files in "filters".
