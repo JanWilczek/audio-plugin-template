@@ -48,6 +48,16 @@ $ cmake --build build
 
 The first run will take the most time because the dependencies (CPM, JUCE, and googletest) need to be downloaded.
 
+Alternatively, you can use bundled CMake presets:
+
+```bash
+$ cmake --preset default # uses the Ninja build system
+$ cmake --build build
+$ ctest --preset default
+```
+
+Existing presets are `default`, `release`, and `Xcode`.
+
 To run clang-format on every commit, in the main directory execute
 
 ```bash
