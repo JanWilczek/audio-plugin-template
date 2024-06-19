@@ -10,7 +10,7 @@ jobs:
   build:
     strategy:
       matrix:
-        os: [macos-latest, windows-latest]
+        os: [macos-14, windows-latest]
         build_type: [Debug, Release]
 
     # The CMake configure and build commands are platform agnostic and should work equally well on Windows or Mac.
@@ -19,6 +19,12 @@ jobs:
     runs-on: ${{ matrix.os }}
 
     steps:
+    - name: List Xcode installations
+      if: matrix.os == 'macos-14'
+      run: sudo ls -1 /Applications | grep "Xcode"
+    - name: Select Xcode 15.3
+      if: matrix.os == 'macos-14'
+      run: sudo xcode-select -s /Applications/Xcode_15.3.app/Contents/Developer
     - uses: actions/checkout@v4
 
     - name: Cache dependencies
