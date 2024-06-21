@@ -24,6 +24,11 @@
       }
     },
     {
+      "name": "vs",
+      "generator": "Visual Studio 17 2022",
+      "binaryDir": "vs-build"
+    },
+    {
       "name": "Xcode",
       "generator": "Xcode",
       "binaryDir": "xcode-build"
@@ -49,6 +54,11 @@
       "name": "release",
       "inherits": "default",
       "configurePreset": "release"
+    },
+    {
+      "name": "vs",
+      "inherits": "default",
+      "configurePreset": "vs"
     },
     {
       "name": "Xcode",
