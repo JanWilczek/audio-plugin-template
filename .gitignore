@@ -4,6 +4,8 @@ libs/
 build/
 xcode-build/
 release-build/
+out/
+vs-build/
 
 # Prerequisites
 *.d
