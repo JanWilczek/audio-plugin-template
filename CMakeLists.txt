@@ -23,8 +23,8 @@ include(cmake/cpm.cmake)
 # This commands downloads AND configures JUCE. It sets up some variables, like JUCE_SOURCE_DIR.
 CPMAddPackage(
     NAME JUCE
-    GIT_TAG 8.0.0
-    VERSION 8.0.0
+    GIT_TAG 8.0.1
+    VERSION 8.0.1
     GITHUB_REPOSITORY juce-framework/JUCE
     SOURCE_DIR ${LIB_DIR}/juce
 )
@@ -33,8 +33,8 @@ CPMAddPackage(
 CPMAddPackage(
     NAME GOOGLETEST
     GITHUB_REPOSITORY google/googletest
-    GIT_TAG v1.14.0
-    VERSION 1.14.0
+    GIT_TAG v1.15.2
+    VERSION 1.15.2
     SOURCE_DIR ${LIB_DIR}/googletest
     OPTIONS
         "INSTALL_GTEST OFF"
