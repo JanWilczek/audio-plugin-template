@@ -25,7 +25,7 @@ target_link_libraries(${PROJECT_NAME}
 # Enables all warnings and treats warnings as errors.
 # This needs to be set up only for your projects, not 3rd party
 if (MSVC)
-    target_compile_options(${PROJECT_NAME} PRIVATE /Wall /WX)
+    target_compile_options(${PROJECT_NAME} PRIVATE /W4 /WX)
 else()
     target_compile_options(${PROJECT_NAME} PRIVATE -Wall -Wextra -Wpedantic)
 endif()
