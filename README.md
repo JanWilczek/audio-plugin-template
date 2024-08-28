@@ -73,3 +73,14 @@ Don't forget to change "YourPluginName" to, well, your plugin name everywhere ðŸ
 See how I create this template step by step in this video:
 
 [![Audio plugin template tutorial video](http://img.youtube.com/vi/Uq7Hwt18s3s/0.jpg)](https://www.youtube.com/watch?v=Uq7Hwt18s3s "Audio plugin template tutorial video")
+
+## CLion Setup
+You can follow these steps in order to use this template with the CLion IDE:
+
+1. Download or clone the template to your computer.
+2. Open CLion and from the Welcome screen press `CMD + SHIFT + A`, enter "Open", and choose the CMakeLists.txt located in the root of the template. In the dialog that opens, click `Open as Project`.
+3. Build the template by clicking on `build` in the main menu.
+4. Upon the first project loading, CLion automatically detects 10 run/debug configuration associated with the project. If you go to `Run | Edit Configurations` it will show the list of these 10 run/debug configurations.
+5. In the `AudioPlugin_VST3` configuration you should set the value of the "Executable" parameter to the file path of your DAW's executable binary file. For example if you're using Ableton Live on a Mac, the binary is found at this path "/Applications/Ableton Live 11 Suite.app/Contents/MacOS".
+6. Now when you run `AudioPlugin_VST3` it will open up your DAW.
+7. You will be able to find the "hello world" plugin under your list of plugins under `/MyCompany/YourPluginName`.
