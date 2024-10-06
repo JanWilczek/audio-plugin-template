@@ -23,8 +23,8 @@ include(cmake/cpm.cmake)
 # This commands downloads AND configures JUCE. It sets up some variables, like JUCE_SOURCE_DIR.
 CPMAddPackage(
     NAME JUCE
-    GIT_TAG 8.0.1
-    VERSION 8.0.1
+    GIT_TAG 8.0.2
+    VERSION 8.0.2
     GITHUB_REPOSITORY juce-framework/JUCE
     SOURCE_DIR ${LIB_DIR}/juce
 )
