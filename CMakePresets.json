@@ -64,7 +64,6 @@
       "name": "Xcode",
       "inherits": "default",
       "configurePreset": "Xcode",
-      // Use Debug by default
       "configuration": "Debug"
     }
   ]
