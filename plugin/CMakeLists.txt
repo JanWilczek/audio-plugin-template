@@ -20,12 +20,19 @@ juce_add_plugin(${PROJECT_NAME}
 )
 
 # Sets the source files of the plugin project.
-target_sources(${PROJECT_NAME}
-    PRIVATE
+set(SOURCE_FILES
         source/PluginEditor.cpp
         source/PluginProcessor.cpp
+)
+# Optional; includes header files in the project file tree in Visual Studio
+set(HEADER_FILES
         ${INCLUDE_DIR}/PluginEditor.h
         ${INCLUDE_DIR}/PluginProcessor.h
+)
+target_sources(${PROJECT_NAME}
+    PRIVATE
+      ${SOURCE_FILES}
+      ${HEADER_FILES}
 )
 
 # Sets the include directories of the plugin project.
@@ -36,9 +43,11 @@ target_include_directories(${PROJECT_NAME}
 
 # Links to all necessary dependencies. The present ones are recommended by JUCE.
 # If you use one of the additional modules, like the DSP module, you need to specify it here.
-target_link_libraries(${PROJECT_NAME}
-    PRIVATE
+target_link_libraries_system(${PROJECT_NAME}
+    PUBLIC
         juce::juce_audio_utils
+)
+target_link_libraries(${PROJECT_NAME}
     PUBLIC
         juce::juce_recommended_config_flags
         juce::juce_recommended_lto_flags
@@ -53,13 +62,9 @@ target_compile_definitions(${PROJECT_NAME}
         JUCE_VST3_CAN_REPLACE_VST2=0
 )
 
-# Enables all warnings and treats warnings as errors.
+# Enables strict C++ warnings and treats warnings as errors.
 # This needs to be set up only for your projects, not 3rd party
-if (MSVC)
-    target_compile_options(${PROJECT_NAME} PRIVATE /W4 /WX)
-else()
-    target_compile_options(${PROJECT_NAME} PRIVATE -Wall -Wextra -Wpedantic)
-endif()
+set_source_files_properties(${SOURCE_FILES} PROPERTIES COMPILE_OPTIONS "${PROJECT_WARNINGS_CXX}")
 
 # In Visual Studio this command provides a nice grouping of source files in "filters".
 source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR}/..)

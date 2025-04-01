@@ -40,11 +40,15 @@ CPMAddPackage(
         "gtest_force_shared_crt ON"
 )
 
-# This command allows running tests from the "build" folder (the one where CMake generates the project to).
-enable_testing()
+# Add compiler warning utilities
+include(cmake/CompilerWarnings.cmake)
+include(cmake/Util.cmake)
 
 # Adds all the targets configured in the "plugin" folder.
 add_subdirectory(plugin)
+
+# This command allows running tests from the "build" folder (the one where CMake generates the project to).
+enable_testing()
 
 # Adds all the targets configured in the "test" folder.
 add_subdirectory(test)
