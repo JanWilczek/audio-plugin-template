@@ -22,9 +22,9 @@ jobs:
     - name: List Xcode installations
       if: matrix.os == 'macos-14'
       run: sudo ls -1 /Applications | grep "Xcode"
-    - name: Select Xcode 16.0
+    - name: Select Xcode 16.2
       if: matrix.os == 'macos-14'
-      run: sudo xcode-select -s /Applications/Xcode_16.app/Contents/Developer
+      run: sudo xcode-select -s /Applications/Xcode_16.2.0.app/Contents/Developer
     - uses: actions/checkout@v4
 
     - name: Cache dependencies
