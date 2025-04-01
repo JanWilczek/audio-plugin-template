@@ -17,7 +17,7 @@
     },
     {
       "name": "release",
-      "generator": "Ninja",
+      "inherits": "default",
       "binaryDir": "release-build",
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Release"
@@ -38,6 +38,18 @@
     {
       "name": "default",
       "configurePreset": "default"
+    },
+    {
+      "name": "release",
+      "configurePreset": "release"
+    },
+    {
+      "name": "vs",
+      "configurePreset": "vs"
+    },
+    {
+      "name": "Xcode",
+      "configurePreset": "Xcode"
     }
   ],
   "testPresets": [
