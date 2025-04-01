@@ -1,4 +1,3 @@
-
 # Mandatory line, sets the minimum version of CMake that should be used with this repository.
 # I specified 3.22 because I trust it. However, currently I have 3.26 installed on my machine.
 # To verify your version run
@@ -21,23 +20,32 @@ set(LIB_DIR ${CMAKE_CURRENT_SOURCE_DIR}/libs)
 include(cmake/cpm.cmake)
 
 # This commands downloads AND configures JUCE. It sets up some variables, like JUCE_SOURCE_DIR.
-CPMAddPackage(
-    NAME JUCE
-    GIT_TAG 8.0.6
-    VERSION 8.0.6
-    GITHUB_REPOSITORY juce-framework/JUCE
-    SOURCE_DIR ${LIB_DIR}/juce
+cpmaddpackage(
+  NAME
+  JUCE
+  GIT_TAG
+  8.0.6
+  VERSION
+  8.0.6
+  GITHUB_REPOSITORY
+  juce-framework/JUCE
+  SOURCE_DIR
+  ${LIB_DIR}/juce
 )
 
 # Adds googletest.
-CPMAddPackage(
-    NAME GOOGLETEST
-    GITHUB_REPOSITORY google/googletest
-    VERSION 1.16.0
-    SOURCE_DIR ${LIB_DIR}/googletest
-    OPTIONS
-        "INSTALL_GTEST OFF"
-        "gtest_force_shared_crt ON"
+cpmaddpackage(
+  NAME
+  GOOGLETEST
+  GITHUB_REPOSITORY
+  google/googletest
+  VERSION
+  1.16.0
+  SOURCE_DIR
+  ${LIB_DIR}/googletest
+  OPTIONS
+  "INSTALL_GTEST OFF"
+  "gtest_force_shared_crt ON"
 )
 
 # Add compiler warning utilities
