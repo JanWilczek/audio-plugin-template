@@ -11,7 +11,7 @@ set(INCLUDE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/include/YourPluginName")
 juce_add_plugin(
   ${PROJECT_NAME}
   COMPANY_NAME
-  MyCompany # change this
+  "MyCompany" # change this
   IS_SYNTH
   FALSE # may change this
   NEEDS_MIDI_INPUT
@@ -19,9 +19,9 @@ juce_add_plugin(
   NEEDS_MIDI_OUTPUT
   FALSE # may change this
   PLUGIN_MANUFACTURER_CODE
-  MCMP # change this
+  Mcmp # change this (for max compatibility, first letter must be uppercase, remaining lowercase)
   PLUGIN_CODE
-  EXPL # change this
+  Expl # change this (for max compatibility, first letter must be uppercase, remaining lowercase)
   FORMATS
   Standalone
   VST3 # may change this
