@@ -1,15 +1,19 @@
 # Mandatory line, sets the minimum version of CMake that should be used with this repository.
-# I specified 3.22 because I trust it. However, currently I have 3.26 installed on my machine.
+# 3.22 is the minimum CMake version required by JUCE.
 # To verify your version run
 # $ cmake --version
-cmake_minimum_required(VERSION 3.22)
+cmake_minimum_required(VERSION 3.22 FATAL_ERROR)
 
-# Sets a few variables, like PROJECT_NAME
-project(WolfSoundAudioPluginTemplate)
+# Sets a few variables, like PROJECT_NAME.
+project(JucePluginDevelopmentCourseTremoloPlugin)
 
-# Always use the newest C++ standard on green-field projects if possible.
-# Currently, JUCE supports only C++ 20 cross-platform.
-set(CMAKE_CXX_STANDARD 20)
+# Set the C++ standard only if this project is standalone;
+# otherwise, let clients decide.
+if(PROJECT_IS_TOP_LEVEL)
+  # Always use the newest C++ standard on green-field projects if possible.
+  # C++ 20 is a good baseline.
+  set(CMAKE_CXX_STANDARD 20)
+endif()
 
 # I like to download the dependencies to the same folder as the project.
 # If you want to install them system wide, set CPM_SOURCE_CACHE with the path to the dependencies

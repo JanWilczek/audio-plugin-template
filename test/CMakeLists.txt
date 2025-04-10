@@ -9,9 +9,6 @@ enable_testing()
 set(SOURCE_FILES source/AudioProcessorTest.cpp)
 add_executable(${PROJECT_NAME} ${SOURCE_FILES})
 
-# Sets the necessary include directories of googletest.
-target_include_directories(${PROJECT_NAME} PRIVATE ${GOOGLETEST_SOURCE_DIR}/googletest/include)
-
 # Thanks to the fact that we link against the gtest_main library, we don't have to write the main function ourselves.
 target_link_libraries(${PROJECT_NAME} PRIVATE AudioPlugin GTest::gtest_main)
 
